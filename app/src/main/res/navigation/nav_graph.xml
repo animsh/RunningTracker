@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
     app:startDestination="@id/setupFragment">
+
+    <action
+        android:id="@+id/action_global_tracking_fragment"
+        app:destination="@+id/trackingFragment"
+        app:launchSingleTop="true" />
+
     <fragment
         android:id="@+id/runFragment"
         android:name="com.animsh.runningtracker.ui.fragments.RunFragment"
-        android:label="RunFragment" >
+        android:label="RunFragment">
         <action
             android:id="@+id/action_runFragment_to_trackingFragment2"
             app:destination="@id/trackingFragment" />
@@ -13,7 +20,7 @@
     <fragment
         android:id="@+id/setupFragment"
         android:name="com.animsh.runningtracker.ui.fragments.SetupFragment"
-        android:label="SetupFragment" >
+        android:label="SetupFragment">
         <action
             android:id="@+id/action_setupFragment_to_runFragment"
             app:destination="@id/runFragment" />
@@ -25,7 +32,7 @@
     <fragment
         android:id="@+id/trackingFragment"
         android:name="com.animsh.runningtracker.ui.fragments.TrackingFragment"
-        android:label="TrackingFragment" >
+        android:label="TrackingFragment">
         <action
             android:id="@+id/action_trackingFragment_to_runFragment2"
             app:destination="@id/runFragment" />
